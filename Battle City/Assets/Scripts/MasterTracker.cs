@@ -15,7 +15,7 @@ public class MasterTracker : MonoBehaviour {
 
     public static int smallTankDestroyed, fastTankDestroyed, bigTankDestroyed, armoredTankDestroyed;
     public static int stageNumber;
-    public static int playerScore = 0;
+    public static int playerScore = 0, playerLives = 0;
 
     void Awake()
     {
