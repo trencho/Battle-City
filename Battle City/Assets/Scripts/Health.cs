@@ -28,7 +28,7 @@ public class Health : MonoBehaviour {
     void Death()
     {
         GamePlayManager GPM = GameObject.Find("Canvas").GetComponent<GamePlayManager>(); //newly added
-        if (gameObject.CompareTag("Player"))
+        if (gameObject.CompareTag("player"))
         {
             GPM.SpawnPlayer(); //Spawn Player
         }

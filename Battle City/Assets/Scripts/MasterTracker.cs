@@ -12,10 +12,10 @@ public class MasterTracker : MonoBehaviour {
     public int fastTankPointsWorth { get { return fastTankPoints; } }
     public int bigTankPointsWorth { get { return bigTankPoints; } }
     public int armoredTankPointsWorth { get { return armoredTankPoints; } }
-
+    public static bool stageCleared = false;
     public static int smallTankDestroyed, fastTankDestroyed, bigTankDestroyed, armoredTankDestroyed;
     public static int stageNumber;
-    public static int playerScore = 0, playerLives = 0;
+    public static int playerScore = 0, playerLives = 3;
 
     void Awake()
     {
