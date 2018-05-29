@@ -3,7 +3,6 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-
 public class GamePlayManager : MonoBehaviour
 {
     [SerializeField]
@@ -19,6 +18,7 @@ public class GamePlayManager : MonoBehaviour
     void Start()
     {
         stageStart = true;
+        stageNumberText.text = "STAGE " + MasterTracker.stageNumber.ToString();
         spawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint");
         spawnPlayerPoints = GameObject.FindGameObjectsWithTag("PlayerSpawnPoint");
         StartCoroutine(StartStage());

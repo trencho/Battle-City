@@ -22,7 +22,7 @@ public class WeaponController : MonoBehaviour
         {
             canonBall.transform.position = transform.position;
             canonBall.transform.rotation = transform.rotation;
-            StartCoroutine(ShowFire());
+           // StartCoroutine(ShowFire());
             canonBall.SetActive(true);
         }
     }

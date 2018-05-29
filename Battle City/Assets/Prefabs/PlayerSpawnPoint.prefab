@@ -100,7 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 1
-  smallTank: {fileID: 1840725879623730, guid: 270b2be6b11cc68438f00a33a6ae25e1, type: 2}
+  smallTank: {fileID: 1793775962602082, guid: 270b2be6b11cc68438f00a33a6ae25e1, type: 2}
   fastTank: {fileID: 0}
   bigTank: {fileID: 0}
   armoredTank: {fileID: 0}

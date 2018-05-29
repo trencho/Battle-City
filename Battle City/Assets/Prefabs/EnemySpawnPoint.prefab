@@ -100,10 +100,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPlayer: 0
-  smallTank: {fileID: 1836506958831930, guid: adaa48a1cfa5a5047b61548124ff1a3f, type: 2}
-  fastTank: {fileID: 1307387341151182, guid: 1d280375caa52bf4288fa321ddad28b0, type: 2}
-  bigTank: {fileID: 1307387341151182, guid: 1d280375caa52bf4288fa321ddad28b0, type: 2}
-  armoredTank: {fileID: 1880706091265638, guid: 091e8a969fcb67e429951a0077189468,
+  smallTank: {fileID: 1254348270322052, guid: adaa48a1cfa5a5047b61548124ff1a3f, type: 2}
+  fastTank: {fileID: 1147399260053020, guid: 1d280375caa52bf4288fa321ddad28b0, type: 2}
+  bigTank: {fileID: 1865107886664738, guid: 091e8a969fcb67e429951a0077189468, type: 2}
+  armoredTank: {fileID: 1147399260053020, guid: 1d280375caa52bf4288fa321ddad28b0,
     type: 2}
 --- !u!212 &212355075216898430
 SpriteRenderer:

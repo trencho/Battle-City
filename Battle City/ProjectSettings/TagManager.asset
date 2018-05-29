@@ -15,6 +15,7 @@ TagManager:
   - PlayerProjectile
   - EnemyProjectile
   - Armored
+  - MasterTracker
   layers:
   - Default
   - TransparentFX
