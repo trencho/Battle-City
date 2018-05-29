@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MasterTracker : MonoBehaviour {
+public class MasterTracker : MonoBehaviour
+{
 
     static MasterTracker instance = null;
 
@@ -17,7 +18,7 @@ public class MasterTracker : MonoBehaviour {
     public static int stageNumber;
     public static int playerScore = 0, playerLives = 3;
 
-    void Awake()
+    /*void Awake()
     {
         if (instance == null)
         {
@@ -28,5 +29,5 @@ public class MasterTracker : MonoBehaviour {
         {
             Destroy(gameObject);
         }
-    }
+    }*/
 }

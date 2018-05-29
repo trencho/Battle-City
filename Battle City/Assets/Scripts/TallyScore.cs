@@ -15,7 +15,6 @@ public class TallyScore : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        
         masterTracker = GetComponent<MasterTracker>();
         smallTankPointsWorth = masterTracker.smallTankPointsWorth;
         fastTankPointsWorth = masterTracker.fastTankPointsWorth;
@@ -56,8 +55,8 @@ public class TallyScore : MonoBehaviour
             yield return new WaitForSeconds(0.2f);
         }
         totalTanksDestroyed.text = (MasterTracker.smallTankDestroyed + MasterTracker.fastTankDestroyed + MasterTracker.bigTankDestroyed + MasterTracker.armoredTankDestroyed).ToString();
-        MasterTracker.playerScore =(smallTankScore + fastTankScore + bigTankScore + armoredTankScore);
-        playerScoreText.text = MasterTracker.playerScore.ToString(); 
+        MasterTracker.playerScore = (smallTankScore + fastTankScore + bigTankScore + armoredTankScore);
+        playerScoreText.text = MasterTracker.playerScore.ToString();
         yield return new WaitForSeconds(5f);
         if (MasterTracker.stageCleared)
         {
