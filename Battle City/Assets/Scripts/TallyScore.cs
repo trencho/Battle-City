@@ -61,8 +61,10 @@ public class TallyScore : MonoBehaviour
         yield return new WaitForSeconds(5f);
         if (MasterTracker.stageCleared)
         {
-            ClearStatistics();
+            //ClearStatistics();
+
             SceneManager.LoadScene("Stage" + (MasterTracker.stageNumber + 1));
+
         }
         else
         {

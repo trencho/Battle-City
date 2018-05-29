@@ -113,7 +113,13 @@ public class GamePlayManager : MonoBehaviour
     }
     private void LevelCompleted()
     {
+        if ((MasterTracker.stageNumber + 1) == 4 || MasterTracker.playerLives==0)
+        {
+            SceneManager.LoadScene("Score");
+        }
         tankReserveEmpty = false;
-        SceneManager.LoadScene("Score");
+        //SceneManager.LoadScene("Score");
+        SceneManager.LoadScene("Stage" + (MasterTracker.stageNumber + 1));
+
     }
 }
