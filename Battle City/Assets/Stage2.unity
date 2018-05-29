@@ -6160,7 +6160,17 @@ Prefab:
     - target: {fileID: 114715577275699592, guid: 9b5fa6e74a61210448159316057635f9,
         type: 2}
       propertyPath: bigTanksInThisLevel
-      value: 1
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114715577275699592, guid: 9b5fa6e74a61210448159316057635f9,
+        type: 2}
+      propertyPath: smallTanksInThisLevel
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114715577275699592, guid: 9b5fa6e74a61210448159316057635f9,
+        type: 2}
+      propertyPath: fastTanksInThisLevel
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b5fa6e74a61210448159316057635f9, type: 2}
