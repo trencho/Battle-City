@@ -1,10 +1,8 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using System.Diagnostics;
-using System;
+
 public class TallyScore : MonoBehaviour
 {
     [SerializeField]
@@ -12,6 +10,7 @@ public class TallyScore : MonoBehaviour
     int smallTankScore, fastTankScore, bigTankScore, armoredTankScore;
     MasterTracker masterTracker;
     int smallTankPointsWorth, fastTankPointsWorth, bigTankPointsWorth, armoredTankPointsWorth;
+    public static int highscore = 3600;
     // Use this for initialization
     void Start()
     {
@@ -22,6 +21,7 @@ public class TallyScore : MonoBehaviour
         armoredTankPointsWorth = masterTracker.armoredTankPointsWorth;
         stageText.text = "STAGE " + MasterTracker.stageNumber;
         playerScoreText.text = MasterTracker.playerScore.ToString();
+        hiScoreText.text = highscore.ToString();
         StartCoroutine(UpdateTankPoints());
     }
     IEnumerator UpdateTankPoints()
