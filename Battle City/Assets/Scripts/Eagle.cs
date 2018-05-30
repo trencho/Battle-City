@@ -24,7 +24,6 @@ public class Eagle : MonoBehaviour {
             transform.GetChild(0).gameObject.SetActive(true);
             GamePlayManager GPM = GameObject.Find("Canvas").GetComponent<GamePlayManager>();
             StartCoroutine(GPM.GameOver());
-            SceneManager.LoadScene("Score");
         }
 
     }
