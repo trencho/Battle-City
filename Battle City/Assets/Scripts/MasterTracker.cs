@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MasterTracker : MonoBehaviour
 {
@@ -9,9 +7,9 @@ public class MasterTracker : MonoBehaviour
 
     [SerializeField]
     int smallTankPoints = 100, fastTankPoints = 200, bigTankPoints = 300, armoredTankPoints = 400;
-    public int smallTankPointsWorth { get { return smallTankPoints; } }
-    public int fastTankPointsWorth { get { return fastTankPoints; } }
-    public int bigTankPointsWorth { get { return bigTankPoints; } }
+    public int SmallTankPointsWorth { get { return smallTankPoints; } }
+    public int FastTankPointsWorth { get { return fastTankPoints; } }
+    public int BigTankPointsWorth { get { return bigTankPoints; } }
     public int armoredTankPointsWorth { get { return armoredTankPoints; } }
     public static bool stageCleared = false;
     public static int smallTankDestroyed, fastTankDestroyed, bigTankDestroyed, armoredTankDestroyed;

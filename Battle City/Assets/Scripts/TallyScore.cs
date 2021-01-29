@@ -5,25 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class TallyScore : MonoBehaviour
 {
+
     [SerializeField]
     Text hiScoreText, stageText, playerScoreText, smallTankScoreText, fastTankScoreText, bigTankScoreText, armoredTankScoreText, smallTanksDestroyed, fastTanksDestroyed, bigTanksDestroyed, armoredTanksDestroyed, totalTanksDestroyed;
     int smallTankScore, fastTankScore, bigTankScore, armoredTankScore;
     MasterTracker masterTracker;
     int smallTankPointsWorth, fastTankPointsWorth, bigTankPointsWorth, armoredTankPointsWorth;
     public static int highscore = 3600;
+
     // Use this for initialization
     void Start()
     {
         masterTracker = GetComponent<MasterTracker>();
-        smallTankPointsWorth = masterTracker.smallTankPointsWorth;
-        fastTankPointsWorth = masterTracker.fastTankPointsWorth;
-        bigTankPointsWorth = masterTracker.bigTankPointsWorth;
+        smallTankPointsWorth = masterTracker.SmallTankPointsWorth;
+        fastTankPointsWorth = masterTracker.FastTankPointsWorth;
+        bigTankPointsWorth = masterTracker.BigTankPointsWorth;
         armoredTankPointsWorth = masterTracker.armoredTankPointsWorth;
         stageText.text = "STAGE " + MasterTracker.stageNumber;
         playerScoreText.text = MasterTracker.playerScore.ToString();
         hiScoreText.text = highscore.ToString();
         StartCoroutine(UpdateTankPoints());
     }
+
     IEnumerator UpdateTankPoints()
     {
         for (int i = 0; i <= MasterTracker.smallTankDestroyed; i++)
@@ -71,6 +74,7 @@ public class TallyScore : MonoBehaviour
             //Load GameOver Scene
         }
     }
+
     void ClearStatistics()
     {
         MasterTracker.smallTankDestroyed = 0;
@@ -79,4 +83,5 @@ public class TallyScore : MonoBehaviour
         MasterTracker.armoredTankDestroyed = 0;
         MasterTracker.stageCleared = false;
     }
+
 }

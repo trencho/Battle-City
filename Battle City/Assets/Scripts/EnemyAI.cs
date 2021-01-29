@@ -1,8 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyAI : Movement {
+public class EnemyAI : Movement
+{
 
     Rigidbody2D rb2d;
     float h, v;
@@ -10,13 +10,15 @@ public class EnemyAI : Movement {
     LayerMask blockingLayer;
     WeaponController wc;
     enum Direction { Up, Down, Left, Right };
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
         RandomDirection();
         wc = GetComponentInChildren<WeaponController>();
-        Invoke("FireWhenWanted", Random.Range(1f, 5f));
+        Invoke(nameof(FireWhenWanted), Random.Range(1f, 5f));
     }
+
     public void RandomDirection()
     {
         CancelInvoke("RandomDirection");
@@ -58,18 +60,21 @@ public class EnemyAI : Movement {
             v = 0;
             h = -1;
         }
-        Invoke("RandomDirection", Random.Range(3, 6));
+        Invoke(nameof(RandomDirection), Random.Range(3, 6));
     }
+
     void FireWhenWanted()
     {
         print("FireWhenWanted");
         wc.Fire();
-        Invoke("FireWhenWanted", Random.Range(1f, 5f));
+        Invoke(nameof(FireWhenWanted), Random.Range(1f, 5f));
     }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         RandomDirection();
     }
+
     void FixedUpdate()
     {
         if (v != 0 && isMoving == false) StartCoroutine(MoveVertical(v, rb2d));

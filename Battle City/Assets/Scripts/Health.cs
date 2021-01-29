@@ -1,6 +1,7 @@
 using UnityEngine;
 
-public class Health : MonoBehaviour {
+public class Health : MonoBehaviour
+{
 
     [SerializeField]
     int actualHealth;
@@ -9,6 +10,7 @@ public class Health : MonoBehaviour {
     {
         SetHealth();
     }
+
     public void TakeDamage()
     {
         currentHealth--;
@@ -17,14 +19,17 @@ public class Health : MonoBehaviour {
             Death();
         }
     }
+
     public void SetHealth()
     {
         currentHealth = actualHealth;
     }
+
     public void SetInvincible()
     {
         currentHealth = 1000;
     }
+
     void Death()
     {
         GamePlayManager GPM = GameObject.Find("Canvas").GetComponent<GamePlayManager>(); //newly added
@@ -41,4 +46,5 @@ public class Health : MonoBehaviour {
         }
         Destroy(gameObject);
     }
+
 }

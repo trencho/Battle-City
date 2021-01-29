@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public abstract class Movement : MonoBehaviour {
+public abstract class Movement : MonoBehaviour
+{
 
     public int speed = 5;
     protected bool isMoving = false;
@@ -73,4 +74,5 @@ public abstract class Movement : MonoBehaviour {
         isMoving = false;
 
     }
+
 }

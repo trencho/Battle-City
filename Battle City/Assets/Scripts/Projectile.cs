@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class Projectile : MonoBehaviour {
+public class Projectile : MonoBehaviour
+{
 
     public bool destroySteel = false;
     bool toBeDestroyed = false;
@@ -9,6 +10,7 @@ public class Projectile : MonoBehaviour {
     Tilemap tilemap;
     public int speed = 1;
     Rigidbody2D rb2d;
+
     void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
@@ -16,6 +18,7 @@ public class Projectile : MonoBehaviour {
         brickGameObject = GameObject.FindGameObjectWithTag("Brick");
         steelGameObject = GameObject.FindGameObjectWithTag("Steel");
     }
+
     void OnEnable()
     {
         if (rb2d != null)
@@ -23,6 +26,7 @@ public class Projectile : MonoBehaviour {
             rb2d.velocity = transform.up * speed;
         }
     }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         rb2d.velocity = Vector2.zero;
@@ -51,6 +55,7 @@ public class Projectile : MonoBehaviour {
             Destroy(this.gameObject);
         }
     }
+
     //function called from Tank to destroy the projectile when the tank is destroyed
     public void DestroyProjectile()
     {
@@ -62,4 +67,5 @@ public class Projectile : MonoBehaviour {
         //set flag toBeDestroyed so that if projectile is still active checking the flag toBeDestroyed during onDisable to destroy the projectile
         toBeDestroyed = true;
     }
+
 }

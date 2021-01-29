@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class GamePlayManager : MonoBehaviour
 {
+
     [SerializeField]
     Image topCurtain, bottomCurtain, blackCurtain;
     [SerializeField]
@@ -13,6 +14,8 @@ public class GamePlayManager : MonoBehaviour
     RectTransform canvas;
     GameObject[] spawnPoints, spawnPlayerPoints;
     bool stageStart = false;
+    bool tankReserveEmpty = false;
+
     // addon to the existing
     // Use this for initialization
     void Start()
@@ -41,7 +44,7 @@ public class GamePlayManager : MonoBehaviour
             StartCoroutine(GameOver());
         }
     }
-    bool tankReserveEmpty = false;
+
     public void SpawnEnemy()
     {
         if (LevelManager.smallTanks + LevelManager.fastTanks + LevelManager.bigTanks + LevelManager.armoredTanks > 0)
@@ -65,9 +68,10 @@ public class GamePlayManager : MonoBehaviour
         StartCoroutine(RevealTopStage());
         StartCoroutine(RevealBottomStage());
         yield return null;
-        InvokeRepeating("SpawnEnemy", LevelManager.spawnRate, LevelManager.spawnRate); //changed to InvokeRepeating
+        InvokeRepeating(nameof(SpawnEnemy), LevelManager.SpawnRate, LevelManager.SpawnRate); //changed to InvokeRepeating
         SpawnPlayer();
     }
+
     IEnumerator RevealStageNumber()
     {
         while (blackCurtain.rectTransform.localScale.y > 0)
@@ -76,6 +80,7 @@ public class GamePlayManager : MonoBehaviour
             yield return null;
         }
     }
+
     IEnumerator RevealTopStage()
     {
         stageNumberText.enabled = false;
@@ -85,6 +90,7 @@ public class GamePlayManager : MonoBehaviour
             yield return null;
         }
     }
+
     IEnumerator RevealBottomStage()
     {
         while (bottomCurtain.rectTransform.position.y > -400)
@@ -93,6 +99,7 @@ public class GamePlayManager : MonoBehaviour
             yield return null;
         }
     }
+
     public IEnumerator GameOver()
     {
         while (gameOverText.rectTransform.localPosition.y < 0)
@@ -103,6 +110,7 @@ public class GamePlayManager : MonoBehaviour
         MasterTracker.stageCleared = false;
         LevelCompleted();
     }
+
     private void Update()
     {
         if (tankReserveEmpty && GameObject.FindWithTag("Small") == null && GameObject.FindWithTag("Fast") == null && GameObject.FindWithTag("Big") == null && GameObject.FindWithTag("Armored") == null)
@@ -111,6 +119,7 @@ public class GamePlayManager : MonoBehaviour
             LevelCompleted();
         }
     }
+
     private void LevelCompleted()
     {
 
@@ -118,4 +127,5 @@ public class GamePlayManager : MonoBehaviour
         SceneManager.LoadScene("Score");
 
     }
+
 }
