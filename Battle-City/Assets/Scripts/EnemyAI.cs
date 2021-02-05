@@ -80,4 +80,5 @@ public class EnemyAI : Movement
         if (v != 0 && isMoving == false) StartCoroutine(MoveVertical(v, rb2d));
         else if (h != 0 && isMoving == false) StartCoroutine(MoveHorizontal(h, rb2d));
     }
+
 }

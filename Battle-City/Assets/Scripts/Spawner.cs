@@ -56,6 +56,7 @@ public class Spawner : MonoBehaviour
             tank = Instantiate(tanks[0], transform.position, transform.rotation);
         }
     }
+
     public void SpawnNewTank()
     {
         if (tank != null) tank.SetActive(true);

@@ -8,7 +8,7 @@ public class LevelManager : MonoBehaviour
     public static int smallTanks, fastTanks, bigTanks, armoredTanks;
     [SerializeField]
     float spawnRateInThisLevel = 5; //newly added
-    
+
     public static float SpawnRate { get; private set; } //newly added
 
     private void Awake()
